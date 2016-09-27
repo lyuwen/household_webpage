@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Payment{% endblock %}
+
+{% block pagetitle %}Payment{% endblock %}
+{% block logstate %}{{ log_btn }}{% endblock %}
+{% block content %}
+
+<div align="center" class="disable-selection">
+<form method="POST">
+{% csrf_token %}
+    <table align="center" style="border-collapse:separate;border-spacing: 10px 5px;">
+        <tr>
+            <th>
+                <input class="form-control" id="id_date" name="date" type="date" value="{{ today }}" required />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <input class="form-control" placeholder="From" id="id_fromN" maxlength="100" name="fromN" type="text" value="{{name}}"  required />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <input class="form-control" placeholder="To" id="id_toN" maxlength="100" name="toN" type="text" required />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <input class="form-control" placeholder="Amount" id="id_amount" name="amount" step="any" type="number" value="" required />
+            </th>
+        </tr>
+    </table>
+    <br>
+    <!--{{ form.as_p }}-->
+    <input class="btn btn-default" type="submit" value="Submit"/>
+
+</form>
+</div>
+
+{% endblock %}

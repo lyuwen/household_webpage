@@ -1,0 +1,128 @@
+.floatleft { float: left; margin: 0px 10px 0px 0px; }
+.floatright { float: right; margin: 0px 10px 0px 0px; }
+
+#lmenu {
+margin-left:0px;
+margin-top:0px;
+height:00px;
+width:220px;
+/*padding-top:10px;*/
+color:black;
+}
+#lmenu ul
+{
+list-style-type: none;
+text-align:left;
+margin-bottom: 0px;
+padding-left:05px;
+padding-top:20px;
+}
+#lmenu a:link    {color:black;text-decoration: none;}
+#lmenu a:visited {color:black;text-decoration: none;}
+#lmenu a:hover   {color:blue;}
+
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+    color: #818181
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background-color: #818181;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}
+.btn-custome {
+    width: 250px;
+    padding: 15px 0px;
+    white-space:nowrap;
+}
+h2{margin-top:20px;margin-bottom:10px}
+hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}
+.row {
+  margin-bottom: 20px;
+}
+.disable-selection {
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer */
+   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+cursor:default;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 00px;
+}
+
+.sidenav-content {
+    position: relative;
+    top: 00px;
+    width: 275px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+@media screen and (max-height: 600px) {
+    table {width: 100%;}
+}

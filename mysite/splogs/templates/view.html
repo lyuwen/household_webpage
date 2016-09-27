@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Report{% endblock %}
+
+{% block pagetitle %}Summary{% endblock %}
+{% block logstate %}{{ log_btn }}{% endblock %}
+{% block content %}
+
+    <table style="border-spacing: 0px 0;"  align="center" class="disable-selection">
+        <tr>
+            <td width="80" align="left">Total</td>
+            <td width="80" align="right">{{ sum }}</td>
+        </tr>
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;" align="left">Ave</td>
+            <td style="border-bottom: 1px solid #ddd;" align="right">{{ ave }}</td>
+        </tr>
+        {% for n, p in indiv %}
+        <tr>
+            <td align="left">{{ n }}</td>
+            <td align="right">{{ p }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr/>
+    <table style="border-collapse:separate;border-spacing: 5px 0;text-align:center;"  align="center" class="disable-selection">
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Product</th>
+            <th>Price</th>
+        </tr>
+        {% for item in rawData %}
+        {% if not item.cleared %}
+        <tr>
+            <td>{{ item.date }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.product }}</td>
+            <td>{{ item.price|floatformat:2 }}</td>
+        </tr>
+        {% else %}
+        <tr style="color:#BDC3C7">
+            <td>{{ item.date }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.product }}</td>
+            <td>{{ item.price|floatformat:2 }}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+
+{% endblock %}

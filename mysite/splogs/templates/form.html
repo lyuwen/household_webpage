@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Purchases{% endblock %}
+
+{% block pagetitle %}Purchases{% endblock %}
+{% block logstate %}{{ log_btn }}{% endblock %}
+{% block content %}
+
+<div align="center" class="disable-selection">
+<form method="POST">
+{% csrf_token %}
+    <table align="center" style="border-collapse:separate;border-spacing: 10px 5px;">
+        <tr>
+            <!--<th align="right"><label for="id_date">Date:</label></th>-->
+            <th><input class="form-control" id="id_date" name="date" type="date" value="{{ today }}" required /></th>
+        </tr>
+        <tr>
+            <!--<th align="right"><label for="id_name">Name:</label></th>-->
+            <th><input class="form-control" placeholder="Name" id="id_name" maxlength="100" name="name" type="text" value="{{name}}" required /></th>
+        </tr>
+        <tr>
+            <!--<th align="right"><label for="id_product">Product:</label></th>-->
+            <th><input class="form-control" placeholder="Product" id="id_product" maxlength="300" name="product" type="text" required /></th>
+        </tr>
+        <tr>
+            <!--<th align="right"><label for="id_price">Price:</label></th>-->
+            <th><input class="form-control" placeholder="Price" id="id_price" name="price" step="any" type="number" value="" required /></th>
+        </tr>
+    </table>
+    <br>
+    <input class="btn btn-default" type="submit" value="Submit"/>
+
+</form>
+</div>
+
+{% endblock %}

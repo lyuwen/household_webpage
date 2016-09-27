@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Payment history{% endblock %}
+
+{% block pagetitle %}Payment history{% endblock %}
+{% block logstate %}{{ log_btn }}{% endblock %}
+{% block content %}
+
+    <table style="border-collapse:separate;border-spacing: 100px 0;"  align="center" class="disable-selection">
+        <tr>
+            <th>Date</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Amount</th>
+        </tr>
+        {% for item in rawData %}
+        <tr>
+            <td>{{ item.date }}</td>
+            <td>{{ item.fromN }}</td>
+            <td>{{ item.toN }}</td>
+            <td>{{ item.amount|floatformat:2 }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Bills{% endblock %}
+
+{% block pagetitle %}Bills{% endblock %}
+{% block logstate %}{{ log_btn }}{% endblock %}
+{% block content %}
+
+    <table align="center" style="border-collapse: separate;border-spacing: 10px 0;" class="disable-selection">
+    {% for x,y,z in inp %}
+        <tr> 
+        <td align="right"><a href="{{ STATIC_URL }}/static/{{x}}">{{y}}</a></td>
+        {% if z %}
+        <td align="left">{{z}}</td>
+        {% endif %}
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}

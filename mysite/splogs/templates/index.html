@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Main Menu{% endblock %}
+
+{% block pagetitle %}Main Menu{% endblock %}
+{% block logstate %}{{ log_btn }}{% endblock %}
+{% block content %}
+
+  <div align="center" class="disable-selection">
+      <div class="row">
+        <a class="btn btn-default btn-custome" style="width: 250px;" href="/splogs/addlog">Submit a purchase</a><br/>
+      </div>
+      <div class="row">
+        <a class="btn btn-default btn-custome" href="/splogs/viewlog">View summary</a><br/>
+      </div>
+      <div class="row">
+        <a class="btn btn-default btn-custome" href="/splogs/pay">Submit payment</a><br/>
+      </div>
+      <div class="row">
+        <a class="btn btn-default btn-custome" href="/splogs/histpmt">Payment history</a><br/>
+      </div>
+      <div class="row">
+        <a class="btn btn-default btn-custome" href="/bills">View bills</a><br/>
+      </div>
+  </div>
+
+{% endblock %}

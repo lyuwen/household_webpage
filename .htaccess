@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /
+ 
+# folders with php & static content
+#RewriteRule ^(stats/.*)$ - [L]
+RewriteRule ^(static/.*)$ - [L]
+#RewriteRule ^(media/.*)$ - [L]
+#RewriteRule ^(admin-media/.*)$ - [L]
+#RewriteRule ^(favicon.ico)$ - [L]
+#RewriteRule ^(favicon.gif)$ - [L]
+ 
+# everything else sent to django
+RewriteRule ^(dispatch\.cgi/.*)$ - [L]
+RewriteRule ^(.*)$ dispatch.cgi/$1 [L]
+

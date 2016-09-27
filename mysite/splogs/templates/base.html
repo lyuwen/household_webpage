@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+<!-- Loading Bootstrap --> <!-- Loading Flat UI -->
+<!--<link rel="stylesheet" type="text/css" charset="utf-8" href="/static/dist/css/vendor/bootstrap/css/bootstrap.min.css"/>-->
+<link rel="stylesheet" type="text/css" href="/static/dist/css/flat-ui.min.css"/>
+<link rel="stylesheet" href="/static/css/base.css" type="text/css" />
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!--<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>-->
+    <!--<script src="/static/js/jquery.ui.touch-punch.min.js"></script>-->
+    <!--<script src="/static/js/jquery.mobile.custom.min.js"></script>-->
+<style>
+
+</style>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+  <body>
+  <div id="mySidenav" class="sidenav disable-selection">
+    <a style="cursor:pointer;" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="sidenav-content">
+    <a style="cursor:pointer;" onclick="window.location.href='/'">Main Menu</a>
+    <a style="cursor:pointer;" onclick="window.location.href='/splogs/addlog'">Submit Purchases</a>
+    <a style="cursor:pointer;" onclick="window.location.href='/splogs/viewlog'">View summary</a>
+    <a style="cursor:pointer;" onclick="window.location.href='/splogs/pay'">Submit payment</a>
+    <a style="cursor:pointer;" onclick="window.location.href='/splogs/histpmt'">Payment history</a>
+    <a style="cursor:pointer;" onclick="window.location.href='/bills'">View bills</a>
+    <!--<hr/>-->
+    {% if username %}
+    <div class="strike"><span>{{ username }}</span></div>
+    {% else %}
+    <hr style="border-color: #818181"/>
+    {% endif %}
+    {% if user.is_superuser %}
+        <a style="cursor:pointer;" onclick="window.location.href='/admin'">Admin</a>
+    {% else %}
+        <a style="cursor:pointer;" onclick="window.location.href='/account'">Account</a>
+    {% endif %}
+    <a style="cursor:pointer;" onclick="window.location.href='/logout'">{{ login_logout }}</a>
+    </div>
+    <div class="disable-selection" style="position:absolute;width:250px;bottom:0;left:5px;font-size:10px">By LFu</div>
+  </div>
+
+  <div id="lmenu">
+  <ul id="lmenu">
+      <li id="lmenu" class="disable-selection" style="font-size:30px;cursor:pointer;" onclick="openNav()"> &#9776;</li>
+  </ul>
+  </div>
+
+  <div id="main" style="transition: 0.5s">
+  <h2 align="center" class="disable-selection">{% block pagetitle %}{% endblock %}</h2>
+  <hr/>
+
+  {% block content %}{% endblock %}
+  </div>
+
+  <script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "275px";
+        if ($(window).width() > 600) {
+            document.getElementById("main").style.marginLeft = "275px";
+        }
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+    $(document).ready(function(){
+        $(window).bind('click',function(){
+            closeNav()
+        });
+        $('#mySidenav').bind('click',function(event){
+            event.stopPropagation();
+        });
+        $('#lmenu').bind('click',function(event){
+            event.stopPropagation();
+        });
+    });
+  </script>
+  </body>
+</html>

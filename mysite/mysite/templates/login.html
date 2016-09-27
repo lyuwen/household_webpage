@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block pagetitle %}Login{% endblock %}
+{% block content %}
+
+<div align="center" class="disable-selection">
+<form method="POST">
+{% csrf_token %}
+    <table align="center" style="border-collapse:separate;border-spacing: 10px 5px;">
+        {% if msg %}
+        <td align="center"><font color="red">{{msg}}</font></td>
+        {% endif %}
+        <tr>
+            <th><input class="form-control" placeholder="User Name" id="id_user" maxlength="100" name="user" type="text" required /></th>
+        </tr>
+        <tr>
+            <!--<th align="right"><label for="id_price">Price:</label></th>-->
+            <th><input class="form-control" placeholder="Password" id="id_password" name="password" type="password" required /></th>
+        </tr>
+    </table>
+    <br>
+    <input class="btn btn-default" type="submit" value="Login"/>
+
+</form>
+</div>
+
+{% endblock %}
