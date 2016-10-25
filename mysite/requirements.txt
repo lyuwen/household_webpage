@@ -21,4 +21,3 @@ rcssmin==1.0.6
 rjsmin==1.0.12
 six==1.10.0
 snowballstemmer==1.2.1
-Sphinx==1.4.6
