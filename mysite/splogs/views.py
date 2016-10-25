@@ -6,9 +6,16 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 from datetime import datetime
 from django.contrib.auth import authenticate, login, logout
-from compAve import SharedPurchase, getName
+from compAve import SharedPurchase
+from django.contrib.auth.models import User, Group
 # Create your views here.
-
+def getName(byName):
+    members=[str(u.first_name.lower()) for u in User.objects.all()]
+    if byName.lower() in members: return byName.lower()
+    for n in members:
+        if byName.lower().find(n)>-1:
+            return n
+    return byName.lower()
 def index(request):
     if not request.user.is_authenticated: return redirect('/')
     if len(request.user.first_name) > 0: uName=request.user.first_name
@@ -32,7 +39,9 @@ def addlog(request):
 
 def viewlog(request):
     if not request.user.is_authenticated: return redirect('/')
-    a=SharedPurchase(initWithPurchase=Logs.objects.all(), andPayment=Pmt.objects.all())
+    group = Group.objects.get(name='home_members')
+    members=[str(u.first_name.lower()) for u in group.user_set.all()]
+    a=SharedPurchase(initWithPurchase=Logs.objects.all(), andPayment=Pmt.objects.all(), andMembers=members)
     text=str(a)+'\n'#+'-'+'\n'
     summary=text
     rawData=Logs.objects.order_by('-date')#[s.split() for strList]

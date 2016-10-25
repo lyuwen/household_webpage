@@ -9,7 +9,7 @@ Here is your account on apt.lfu.space.
 
 The username is \t\t{1}
 with email address \t\t{2}
-The initial password is \tapt123456789
+The initial password is \tpassword
 
 The link will navigate you to the website.
 http://apt.lfu.space
@@ -27,7 +27,7 @@ def sendInitMail(users):
     counter=0
     for u in users:
         counter+=send_mail('New account for %s at apt.lfu.space'%u['name'].strip(),\
-                           initMessage.format(u['name'].strip(), u['username'], u['email']), 'noreply@lfu.space', [u['email']], fail_silently=False,)
+                           initMessage.format(u['name'].strip(), u['username'], u['email']), 'noreply', [u['email']], fail_silently=False,)
     print "%s of %s has been sent"%(counter, len(users))
 
 def sendMail(users, subject, message):
@@ -39,5 +39,5 @@ def sendMail(users, subject, message):
     counter=0
     for u in users:
         counter+=send_mail(subject.format(u['name'].strip(), u['username'], u['email']),\
-                           message.format(u['name'].strip(), u['username'], u['email']), 'noreply@lfu.space', [u['email']], fail_silently=False,)
+                           message.format(u['name'].strip(), u['username'], u['email']), 'noreply', [u['email']], fail_silently=False,)
     print "%s of %s has been sent"%(counter, len(users))
