@@ -44,3 +44,27 @@ to settings.py and fill in the DATABASE settings.
     ```
     ./manage.py runserver
     ```
+
+## User settings
+
+When you are able to run the website locally, 
+then you should be able to put it online as well.
+
+After that you need to configure users as the website is 
+majorly protected by user authorization.
+
+Currently the code will load all the users and data in the 
+```home_members``` group.
+Just put everyone in that group and it's good to go.
+
+## Features
+
+1. Shared purchases and balance for members
+
+1. Payment recording
+
+## Features will come in the future
+
+1. Support for multiple home groups.
+
+1. Email notification support for superuser
