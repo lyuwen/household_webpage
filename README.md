@@ -1,8 +1,13 @@
 # Household Website
 
 This is just a simple and easy-to-setup web App, 
-that allows you to manage multiple stuff within
-a household.
+that allows you to manage multiple things within
+a household. And it is also easy to customize to
+whatever you like.
+
+The code uses [Django](https://www.djangoproject.com) as the website engine, 
+and [Flat-Ui](http://designmodo.github.io/Flat-UI/) for the 
+user interface.
 
 ## Installation
 
@@ -67,4 +72,4 @@ Just put everyone in that group and it's good to go.
 
 * Support for multiple home groups.
 
-* Email notification support for superuser
+* Email notification and broadcast support for superuser
