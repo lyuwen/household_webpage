@@ -59,12 +59,12 @@ Just put everyone in that group and it's good to go.
 
 ## Features
 
-1. Shared purchases and balance for members
+* Shared purchases and balance for members
 
-1. Payment recording
+* Payment recording
 
 ## Features will come in the future
 
-1. Support for multiple home groups.
+* Support for multiple home groups.
 
-1. Email notification support for superuser
+* Email notification support for superuser
