@@ -32,8 +32,13 @@
 <a id="household-website" class="anchor" href="#household-website" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Household Website</h1>
 
 <p>This is just a simple and easy-to-setup web App, 
-that allows you to manage multiple stuff within
-a household.</p>
+that allows you to manage multiple things within
+a household. And it is also easy to customize to
+whatever you like.</p>
+
+<p>The code uses <a href="https://www.djangoproject.com">Django</a> as the website engine, 
+and <a href="http://designmodo.github.io/Flat-UI/">Flat-Ui</a> for the 
+user interface.</p>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
@@ -62,8 +67,7 @@ to settings.py and fill in the DATABASE settings.</p></li>
 <li>
 <p>Then create a superuser for the web App with</p>
 
-<div class="highlight highlight-source-shell">
-  <pre><code>./manage.py createsuperuser</code></pre></div>
+<div class="highlight highlight-source-shell"><pre>./manage.py createsuperuser</pre></div>
 </li>
 <li>
 <p>Do the migrations for Django with</p>
@@ -79,6 +83,35 @@ to settings.py and fill in the DATABASE settings.</p></li>
 </code></pre>
 </li>
 </ol>
+
+<h2>
+<a id="user-settings" class="anchor" href="#user-settings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>User settings</h2>
+
+<p>When you are able to run the website locally, 
+then you should be able to put it online as well.</p>
+
+<p>After that you need to configure users as the website is 
+majorly protected by user authorization.</p>
+
+<p>Currently the code will load all the users and data in the 
+<code>home_members</code> group.
+Just put everyone in that group and it's good to go.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li><p>Shared purchases and balance for members</p></li>
+<li><p>Payment recording</p></li>
+</ul>
+
+<h2>
+<a id="features-will-come-in-the-future" class="anchor" href="#features-will-come-in-the-future" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features will come in the future</h2>
+
+<ul>
+<li><p>Support for multiple home groups.</p></li>
+<li><p>Email notification and broadcast support for superuser</p></li>
+</ul>
         </section>
 
         <aside id="sidebar">
