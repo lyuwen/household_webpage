@@ -39,14 +39,14 @@ to settings.py and fill in the DATABASE settings.
 
 1. Do the migrations for Django with
     
-    ```
+    ```bash
     ./manage.py makemigrations
     ./manage.py migrate
     ```
 
 1. Then you should be able to run the website locally with
     
-    ```
+    ```bash
     ./manage.py runserver
     ```
 
