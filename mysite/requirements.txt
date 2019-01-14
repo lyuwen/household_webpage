@@ -1,7 +1,7 @@
 alabaster==0.7.9
 Babel==2.3.4
 beautifulsoup4==4.5.1
-Django==1.10
+django>=1.11.18
 django-appconf==1.0.2
 django-compress==1.0.1
 django-compressor==2.1
